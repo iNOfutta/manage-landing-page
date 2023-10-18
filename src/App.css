@@ -1,0 +1,114 @@
+:root {
+  --bright-red: hsl(12, 88%, 59%);
+  --dark-blue: hsl(228, 39%, 23%);
+
+  --grayish-blue: hsl(227, 12%, 61%);
+  --dark-blue: hsl(233, 12%, 13%);
+  --pale-red: hsl(13, 100%, 96%);
+  --light-gray: hsl(0, 0%, 98%);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background-color: hsl(12, 88%, 59%);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 15px 35px;
+}
+.button--shadow {
+  box-shadow: 4px 4px 30px -5px hsl(12, 88%, 59%);
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-family: "Outfit", sans-serif;
+}
+p {
+  color: var(--grayish-blue);
+}
+h1,
+h2,
+h3 {
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+.nav-button {
+  visibility: hidden;
+}
+.main-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/*Mobile nav menu*/
+.mobile-nav {
+  position: fixed;
+  background-color: var(--bright-red);
+  color: var(--dark-blue);
+  text-align: center;
+  margin: 0px 5px;
+  width: 85%;
+  padding: 35px 20px;
+}
+.mobile-nav li {
+  padding: 15px;
+  font-weight: 500;
+}
+/* Hero section */
+.hero-section div {
+  text-align: center;
+}
+.hero-section img {
+  max-width: 100%;
+}
+.hero-section {
+  margin: 35px;
+  margin-bottom: 140px;
+}
+/* Manage section */
+.manage-section div {
+  text-align: start;
+}
+.title {
+  margin: 45px;
+}
+.title h2,
+.title p {
+  text-align: center;
+}
+.content button {
+  margin-right: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 700;
+}
+.content p {
+  margin-bottom: 50px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1000px) {
+  .main-menu div image {
+    height: 100%;
+  }
+  .main-menu ul li {
+    display: inline-block;
+    align-self: flex-start;
+  }
+  .main-menu ul {
+    justify-self: center;
+  }
+}
