@@ -3,7 +3,7 @@
   --dark-blue: hsl(228, 39%, 23%);
 
   --grayish-blue: hsl(227, 12%, 61%);
-  --dark-blue: hsl(233, 12%, 13%);
+  --very-dark-blue: hsl(233, 12%, 13%);
   --pale-red: hsl(13, 100%, 96%);
   --light-gray: hsl(0, 0%, 98%);
 }
@@ -21,6 +21,10 @@ button {
   color: white;
   padding: 15px 35px;
 }
+button:hover {
+  background-color: hsl(12 88% 59%/0.8);
+  cursor: pointer;
+}
 .button--shadow {
   box-shadow: 4px 4px 30px -5px hsl(12, 88%, 59%);
 }
@@ -28,6 +32,8 @@ button {
 body {
   font-family: "Be Vietnam Pro", sans-serif;
   font-family: "Outfit", sans-serif;
+  line-height: 25px;
+  color: var(--dark-blue);
 }
 p {
   color: var(--grayish-blue);
@@ -35,10 +41,15 @@ p {
 h1,
 h2,
 h3 {
-  color: var(--dark-blue);
   font-weight: 700;
 }
-.nav-button {
+h1 {
+  font-size: 40px;
+  line-height: 50px;
+}
+
+/*Nav menu*/
+.nav-item-toggle {
   visibility: hidden;
 }
 .main-menu {
@@ -46,7 +57,6 @@ h3 {
   justify-content: space-around;
   align-items: center;
 }
-/*Mobile nav menu*/
 .mobile-nav {
   position: fixed;
   background-color: var(--bright-red);
@@ -54,7 +64,7 @@ h3 {
   text-align: center;
   margin: 0px 5px;
   width: 85%;
-  padding: 35px 20px;
+  padding: 60px 20px;
 }
 .mobile-nav li {
   padding: 15px;
@@ -88,10 +98,130 @@ h3 {
   padding-right: 30px;
   font-size: 700;
 }
+.content button:hover {
+  background-color: hsl(12, 88%, 59%);
+  cursor: auto;
+}
 .content p {
   margin-bottom: 50px;
 }
-
+.manage-section {
+  margin-bottom: 80px;
+}
+/* Testimonials section */
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.testimonials h2 {
+  margin-bottom: 60px;
+}
+.testimonials img,
+.testimonials strong,
+.testimonials p {
+  margin: 10px;
+}
+.testimonials p {
+  padding: 0px 45px;
+  margin-bottom: 45px;
+}
+.testimonials img {
+  max-width: 100%;
+}
+.testimonials button {
+  margin-bottom: 40px;
+}
+.nav-circles {
+  display: flex;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--bright-red);
+  margin: 60px 5px;
+  border-radius: 50px;
+}
+.circle--bg {
+  background-color: var(--bright-red);
+}
+.sr-only {
+  visibility: hidden;
+}
+/* Simplify section */
+.simplify-section {
+  background-color: var(--bright-red);
+  text-align: center;
+  padding: 75px;
+}
+.simplify-section h1 {
+  color: var(--light-gray);
+}
+.simplify-section button {
+  color: var(--bright-red);
+  background-color: var(--light-gray);
+}
+/* Footer */
+footer {
+  background-color: var(--very-dark-blue);
+  padding-bottom: 15px;
+  color: var(--light-gray);
+}
+footer p {
+  color: var(--light-gray);
+  font-size: 14px;
+  text-align: center;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.footer__images {
+  order: 1;
+  margin: 10px;
+}
+.footer__images img {
+  padding: 15px;
+}
+.footer__form {
+  order: -1;
+  margin: 40px;
+}
+.footer__form input {
+  border: none;
+  border-radius: 50px;
+  padding: 15px 35px;
+  margin-right: 5px;
+}
+input[type="email"]:invalid {
+  border: 2px solid var(--bright-red);
+  color: var(--bright-red);
+}
+input[type="email"]:focus {
+  outline: none;
+}
+.error-message {
+  position: relative;
+  bottom: 10px;
+  right: 70px;
+  color: var(--bright-red);
+}
+.footer__nav {
+  display: flex;
+}
+.footer__nav-items li {
+  padding: 10px;
+  margin: 0px 25px;
+}
+.footer__nav-items li:hover,
+.footer__images img:hover {
+  color: var(--bright-red);
+  cursor: pointer;
+}
+/* Author Info */
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -100,15 +230,94 @@ h3 {
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (min-width: 1000px) {
-  .main-menu div image {
-    height: 100%;
+@media screen and (min-width: 1100px) {
+  .nav-images {
+    visibility: hidden;
   }
-  .main-menu ul li {
+  .nav-item-toggle {
+    visibility: visible;
+  }
+  .main-menu {
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .main-list {
+    margin: -10px calc(85px + 100px) 0px 85px;
+  }
+  .main-list li {
     display: inline-block;
-    align-self: flex-start;
+    padding: 0px 20px;
   }
-  .main-menu ul {
-    justify-self: center;
+  .main-list li:hover {
+    color: var(--grayish-blue);
   }
+  /* Main menu */
+
+  .hero-section {
+    display: flex;
+    align-items: start;
+    margin-top: 145px;
+  }
+  .hero-section img {
+    order: 1;
+    max-height: min-content;
+  }
+  .hero-section div {
+    text-align: left;
+  }
+  .hero-section div button,
+  .hero-section div p,
+  .hero-section div h1 {
+    margin-bottom: 50px;
+  }
+  /* Hero section */
+
+  .title {
+    margin: 0px 45px;
+  }
+  .title h2,
+  .title p {
+    text-align: start;
+  }
+  .title p {
+    margin-right: 260px;
+  }
+  .content p {
+    margin-left: 95px;
+    margin-top: -50px;
+  }
+  /* Manage section */
+
+  .simplify-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+  }
+  .simplify-section h1 {
+    margin: 0px 1px;
+    padding-right: 400px;
+    text-align: left;
+  }
+  .simplify-section button {
+    width: 15%;
+  }
+  /* Simplify section */
+
+  .footer {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .footer__images {
+    order: -1;
+  }
+  .footer__form {
+    order: 1;
+  }
+  .footer__nav-items li {
+    margin: 0px 45px;
+    margin-right: 80px;
+  }
+  /* Footer */
 }
